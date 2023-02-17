@@ -81,7 +81,7 @@ def create_model_for_provider(
         provider_to_use = [provider_to_use]
     if provider_to_use == ["CPUExecutionProvider"]:
         options.execution_mode = ExecutionMode.ORT_SEQUENTIAL
-        options.intra_op_num_threads = nb_threads
+    options.intra_op_num_threads = nb_threads
     return InferenceSession(path, options, providers=provider_to_use)
 
 
